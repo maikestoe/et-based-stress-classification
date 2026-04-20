@@ -1,0 +1,48 @@
+{
+    "df_prep_path": "data/fordigitstress/dataframes/DL_out.pkl",
+    "timestamp": "2024-08-09",
+    "experiment_id": "201",
+    "shuffle": true,
+    "valid_IDs": [10, 11, 13, 14, 17, 19, 24, 25, 26, 27, 42, 43, 44, 49, 50],
+    "recovery": {
+        "compute_saliency": true,
+        "attribution_method": "saliency",
+        "saliency_num_examples_per_subject": 5,
+        "saliency_target": "all",
+        "occlusion_window_size": 15,
+        "occlusion_stride": 5,
+        "occlusion_fill": "mean"
+    },
+    "DL": {
+        "model": "CNN",
+        "input_cols": ["meanDia_corrected"],
+        "path_results": "results/fordigitstress/DL/",
+        "epochs": 100,
+        "optimizer": "adam",
+        "n_splits_inner": 5,
+        "validation_size_inner": 0.1,
+        "smote": false,
+        "adasyn": true,
+        "rand_undersample": false
+    },
+    "optuna": {
+        "n_trials": 50,
+        "n_jobs": 1,
+        "lr_low": 0.00001,
+        "lr_high": 0.01,
+        "weight_alpha": [0.1, 1.0, "float"],
+        "weight_gamma": [0, 5, "float"],
+        "batch_size": [32],
+        "CNN": {
+            "filters1": [64, 128, 256, 512, "categ"],
+            "filters2": [16, 32, 64, 128, 256, "categ"],
+            "filters3": [16, 32, 64, 128, 256, "categ"],
+            "k_size": [2, 3, 4, "categ"],
+            "p_size": [2, 3, 4, 5, "categ"],
+            "drop1": [0.1, 0.5, "float"],
+            "drop2": [0.1, 0.5, "float"],
+            "drop3": [0.1, 0.5, "float"],
+            "dense": [16, 32, 64, 128, "categ"]
+        }
+    }
+}

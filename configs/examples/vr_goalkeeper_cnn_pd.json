@@ -1,0 +1,39 @@
+{
+    "df_prep_path": "data/vr_goalkeeper/dataframes/DL_out.pkl",
+    "timestamp": "2024-08-09",
+    "experiment_id": "1",
+    "shuffle": true,
+    "valid_IDs": [0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 29],
+    "DL": {
+        "model": "CNN",
+        "input_cols": ["meanDia_corrected"],
+        "path_results": "results/vr_goalkeeper/DL/",
+        "epochs": 100,
+        "optimizer": "adam",
+        "n_splits_inner": 5,
+        "validation_size_inner": 0.1,
+        "smote": false,
+        "adasyn": false,
+        "rand_undersample": false
+    },
+    "optuna": {
+        "n_trials": 50,
+        "n_jobs": 1,
+        "lr_low": 0.00001,
+        "lr_high": 0.01,
+        "weight_alpha": [0.1, 1.0, "float"],
+        "weight_gamma": [0, 5, "float"],
+        "batch_size": [32],
+        "CNN": {
+            "filters1": [64, 128, 256, 512, "categ"],
+            "filters2": [16, 32, 64, 128, 256, "categ"],
+            "filters3": [16, 32, 64, 128, 256, "categ"],
+            "k_size": [2, 3, 4, "categ"],
+            "p_size": [2, 3, 4, 5, "categ"],
+            "drop1": [0.1, 0.5, "float"],
+            "drop2": [0.1, 0.5, "float"],
+            "drop3": [0.1, 0.5, "float"],
+            "dense": [16, 32, 64, 128, "categ"]
+        }
+    }
+}

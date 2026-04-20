@@ -1,0 +1,31 @@
+{
+    "base_config": "fordigitstress_cnn_pd_recovery.json",
+    "timestamp": "local-smoke-fordigitstress",
+    "experiment_id": "smoke_fordigitstress_cnn_pd",
+    "valid_IDs": [10, 11, 13, 14],
+    "outer_test_IDs": [10, 11],
+    "mixed_precision": false,
+    "DL": {
+        "epochs": 2,
+        "validation_size_inner": 0.2,
+        "n_splits_inner": 2,
+        "path_results": "results/local_smoke/fordigitstress/DL/",
+        "adasyn": false
+    },
+    "optuna": {
+        "n_trials": 1,
+        "n_jobs": 1,
+        "batch_size": [16],
+        "CNN": {
+            "filters1": [16, "categ"],
+            "filters2": [16, "categ"],
+            "filters3": [16, "categ"],
+            "k_size": [2, "categ"],
+            "p_size": [2, "categ"],
+            "drop1": [0.1, "categ"],
+            "drop2": [0.1, "categ"],
+            "drop3": [0.1, "categ"],
+            "dense": [16, "categ"]
+        }
+    }
+}
