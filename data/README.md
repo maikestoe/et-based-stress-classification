@@ -16,6 +16,35 @@ please cite the dataset record and the accompanying paper. If you use
 ForDigitStress, please cite the corresponding ForDigitStress publication and
 follow the acknowledgement requirements in its EULA.
 
+## Data access procedures
+
+- **VR goalkeeper dataset**:
+  - download the dataset from the Zenodo record referenced in the repository
+    root `README.md`,
+  - place the raw files in `data/vr_goalkeeper/raw/`,
+  - preprocess them with `scripts/preprocessing/preprocess_vr_goalkeeper.py`,
+  - minimal example of reading one raw file:
+
+    ```python
+    import pandas as pd
+    df = pd.read_csv("data/vr_goalkeeper/raw/LogID_0_base1.csv", sep=";")
+    ```
+
+- **ForDigitStress dataset**:
+  - request access from the dataset administrators at
+    [hcai.eu/fordigitstress/](https://hcai.eu/fordigitstress/),
+  - place the authorized raw files in `data/fordigitstress/raw/`,
+  - preprocess them with `scripts/preprocessing/preprocess_fordigitstress.py`,
+  - minimal example of reading one raw file:
+
+    ```python
+    import pandas as pd
+    df = pd.read_csv("data/fordigitstress/raw/VP1/stress.csv", sep=";")
+    ```
+
+The preprocessing scripts document the expected input files and the dataset-
+specific processing steps used in the manuscript.
+
 Suggested layout:
 
 ```text

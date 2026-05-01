@@ -3,57 +3,79 @@
 This repository contains the code accompanying the manuscript:
 
 **Classifying Mental Stress from Eye Tracking Data: Deep Learning Approaches for Out-of-the-Lab Conditions**
-
 The code supports preprocessing, feature-based baseline training, deep-learning
-training, evaluation, and supplementary analyses for two public datasets:
+training, evaluation, and supplementary analyses for two datasets:
 
-- **VR goalkeeper dataset**
-- **ForDigitStress dataset**
+- **VR goalkeeper dataset** (publicly available)
+- **ForDigitStress dataset** (restricted access)
 
-The datasets themselves are not redistributed in this repository. Download them
-from their public sources and place them under `data/` as described below.
+The datasets themselves are not redistributed in this repository and must be
+obtained from their original providers.
 
 Dataset sources:
 
-- **VR goalkeeper dataset**: Zenodo, DOI
-  [10.5281/zenodo.17972964](https://doi.org/10.5281/zenodo.17972964). If you
-  use this dataset or code derived from this repository, please cite the dataset
-  record and the accompanying paper listed at the top of this README.
-- **ForDigitStress dataset**: an external dataset described in Heimerl et al.,
-  [DOI: 10.1109/TAFFC.2024.3501400](https://doi.org/10.1109/TAFFC.2024.3501400);
-  see also the University of Augsburg OPUS record
-  [opus4/119234](https://opus.bibliothek.uni-augsburg.de/opus4/119234).
-  We used this dataset after requesting access from the dataset administrators.
-  Access can be requested at
-  [hcai.eu/fordigitstress/](https://hcai.eu/fordigitstress/). Use of the dataset
-  is governed by the ForDigitStress end-user license agreement (EULA), including
-  scientific non-commercial use only and no redistribution of the dataset.
+- **VR goalkeeper dataset** (public):
+  Zenodo, DOI [10.5281/zenodo.17972964](https://doi.org/10.5281/zenodo.17972964)
 
+- **ForDigitStress dataset** (restricted):
+  Heimerl et al., DOI [10.1109/TAFFC.2024.3501400](https://doi.org/10.1109/TAFFC.2024.3501400)  
+  Access must be requested via [hcai.eu/fordigitstress/](https://hcai.eu/fordigitstress/)  
+  and is subject to the dataset’s EULA (non-commercial use, no redistribution).
+- 
 ## Data Access and License Notes
 
-This repository redistributes code only. It does not include raw data,
-preprocessed dataframes, recovered predictions, trained model weights, or
-dataset-derived result artefacts.
+This repository contains code only and does not include raw data, processed data,
+trained models, or dataset-derived artefacts.
 
 Users are responsible for complying with the licenses and access conditions of
-the datasets they download. The VR goalkeeper dataset and the ForDigitStress
-dataset are separate datasets with separate access conditions and citation
-requirements. The VR goalkeeper dataset should be cited via its Zenodo record
-and the accompanying paper. The ForDigitStress dataset should be requested from
-the dataset administrators and used according to the ForDigitStress EULA.
+the respective datasets. The VR goalkeeper dataset is publicly available and
+should be cited via its Zenodo record. 
 
-Do not commit or publish raw data, derived sample-level dataframes, recovered
-prediction arrays, trained weights, download credentials, or any other artefacts
-that would redistribute either dataset or grant access to it.
+The ForDigitStress dataset requires
+authorized access and must be used in accordance with its EULA. Do not share or 
+publish raw data, derived datasets, trained models, or any other
+artefacts that would enable redistribution of the datasets or bypass their access 
+restrictions.
 
-Publications or educational materials using ForDigitStress should additionally
-acknowledge the dataset according to its EULA, for example:
+When using the ForDigitStress dataset, please acknowledge it according to its
+EULA, for example:
 
 > (Portions of) the research in this work use the ForDigitStress Dataset
 > collected for the ForDigitHealth project.
 
-Please cite the corresponding ForDigitStress publication when using the
-ForDigitStress dataset.
+## Data Access Procedures
+
+The repository provides preprocessing scripts documenting how each dataset is
+loaded and transformed.
+
+- **VR goalkeeper dataset** (public):
+  - download from Zenodo,
+  - place files in `data/vr_goalkeeper/raw/`,
+  - run:
+    ```bash
+    python scripts/preprocessing/preprocess_vr_goalkeeper.py
+    ```
+  - example:
+    ```python
+    import pandas as pd
+    df = pd.read_csv("data/vr_goalkeeper/raw/LogID_0_base1.csv", sep=";")
+    ```
+
+- **ForDigitStress dataset** (restricted):
+  - request access via https://hcai.eu/fordigitstress/,
+  - place authorized files in `data/fordigitstress/raw/`,
+  - run:
+    ```bash
+    python scripts/preprocessing/preprocess_fordigitstress.py
+    ```
+  - example:
+    ```python
+    import pandas as pd
+    df = pd.read_csv("data/fordigitstress/raw/VP1/stress.csv", sep=";")
+    ```
+
+The preprocessing scripts define the expected structure and processing steps for
+both datasets.
 
 ## Repository Structure
 
@@ -122,6 +144,22 @@ data/
 The preprocessing scripts generate the `dataframes/` files used by the training
 and evaluation code. If you already have preprocessed files, you can place them
 directly in the expected locations and start from training or evaluation.
+
+## Model Checkpoints
+
+The repository enables reproduction through dataset access, preprocessing,
+training code, configuration files, and evaluation scripts.
+
+- **VR goalkeeper dataset (public)**:  
+  All model checkpoints were generated during the study. However, the full set
+  comprises hundreds of fold-specific models (30 configurations × 27 folds),
+  which are not included due to their size and limited practical usefulness.
+  Representative checkpoints can be provided by the authors upon request.
+
+- **ForDigitStress dataset (restricted)**:  
+  Model checkpoints are not distributed. Due to the dataset’s restricted-access
+  EULA, derivative artefacts such as trained models are not shared through this
+  repository.
 
 ## Reproducing the Paper Results
 
