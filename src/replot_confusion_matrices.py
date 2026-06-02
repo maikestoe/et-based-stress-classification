@@ -4,6 +4,10 @@ import os
 import subprocess
 
 import numpy as np
+import matplotlib
+
+matplotlib.use("Agg")
+
 from matplotlib import pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.ticker import ScalarFormatter

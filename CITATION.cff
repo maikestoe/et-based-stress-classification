@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying manuscript and the archived repository version."
+title: "Stress Classification from Eye-Tracking Time Series"
+authors:
+  - family-names: "Laut"
+    given-names: "Maike"
+repository-code: "https://github.com/maikestoe/et-based-stress-classification"
+license: "BSD-3-Clause"

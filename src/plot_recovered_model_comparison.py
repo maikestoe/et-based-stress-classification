@@ -13,7 +13,9 @@ from matplotlib.patches import Patch
 from matplotlib.ticker import ScalarFormatter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 STYLE_PATH = os.path.join(SCRIPT_DIR, "plot_style2.txt")
+DEFAULT_VR_SOURCE_DATA = os.path.join(PROJECT_ROOT, "results", "source_data", "vr_model_comparison_metrics.csv")
 
 
 VR_RESULTS = {
@@ -110,7 +112,7 @@ SIGNAL_LABELS = {
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Create model comparison plots from hardcoded paper F1 values."
+        description="Create model-comparison plots from saved source-data tables."
     )
     parser.add_argument(
         "--dataset",
@@ -128,6 +130,11 @@ def parse_args():
         "--output-dir",
         default=os.path.join(SCRIPT_DIR, "..", "results", "paper_model_comparison"),
         help="Directory where the plot and CSV export should be written."
+    )
+    parser.add_argument(
+        "--vr-source-data",
+        default=DEFAULT_VR_SOURCE_DATA,
+        help="CSV generated from VR Goalkeeper final_summary.txt logs.",
     )
     parser.add_argument(
         "--no-latex",
@@ -221,7 +228,23 @@ def left_align_legend(legend):
         text.set_ha("left")
 
 
-def build_vr_dataframe():
+def build_vr_dataframe(source_data_path=None):
+    if source_data_path and os.path.exists(source_data_path):
+        source_df = pd.read_csv(source_data_path)
+        plot_df = source_df.rename(
+            columns={
+                "macro_f1_mean_percent": "mean_f1",
+                "macro_f1_std_percent": "std_f1",
+            }
+        )[["input_signal", "model", "mean_f1", "std_f1"]]
+        plot_df["input_signal"] = plot_df["input_signal"].replace(
+            {
+                "Angular velocity": "Velocity",
+                "Angular acceleration": "Acceleration",
+            }
+        )
+        return plot_df
+
     rows = []
     for signal_name, signal_results in VR_RESULTS.items():
         for model_name in MODEL_ORDER:
@@ -468,7 +491,7 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     if args.dataset == "vr":
-        df = build_vr_dataframe()
+        df = build_vr_dataframe(args.vr_source_data)
         output_base_path = os.path.join(output_dir, "vr_macro_f1_model_comparison")
         df.to_csv(f"{output_base_path}.csv", index=False)
         plot_vr_comparison(df, output_base_path)
@@ -476,7 +499,7 @@ def main():
         return
 
     if args.dataset == "both":
-        vr_df = build_vr_dataframe()
+        vr_df = build_vr_dataframe(args.vr_source_data)
         fordigit_df = build_fordigit_dataframe(args.metric)
         output_base_path = os.path.join(output_dir, f"vr_fordigit_{args.metric.lower()}_model_comparison")
         pd.concat(

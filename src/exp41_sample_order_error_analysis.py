@@ -44,7 +44,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--config",
-        default="config_files/exp41.json",
+        default="configs/examples/vr_goalkeeper_convlstm3_asymptotic_recovery.json",
         help="Experiment config used to locate result artifacts.",
     )
     parser.add_argument(

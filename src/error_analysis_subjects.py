@@ -43,8 +43,8 @@ except ImportError:
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_DIR = os.path.join(SCRIPT_DIR, "config_files")
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+CONFIG_DIR = os.path.join(PROJECT_ROOT, "configs", "examples")
 LOCAL_DATA_ROOT = os.path.join(PROJECT_ROOT, "data")
 LOCAL_RESULTS_ROOT = os.path.join(PROJECT_ROOT, "results")
 STYLE_PATH = os.path.join(SCRIPT_DIR, "plot_style2.txt")

@@ -7,11 +7,11 @@ not scientific terminology. In text and figures, prefer the paper-facing names
 (`CNN`, `LSTM-1`, `LSTM-3`, `ConvLSTM-1`, `ConvLSTM-3`) and use the experiment
 IDs only when referring to configs or saved result folders.
 
-The public repository contains representative example configurations in
-`configs/examples/` rather than one config file for every experiment below.
-The full paper matrix can be recreated by combining the model, input signal,
-and dataset settings shown here with the hyperparameter ranges in the example
-configs.
+The public repository contains runnable example configurations in
+`configs/examples/` and a compact machine-readable paper matrix in
+`configs/paper/paper_experiment_matrix.csv`. The full paper matrix can be
+recreated by combining the model, input signal, and dataset settings shown here
+with the hyperparameter ranges in the example configs.
 
 ## Naming Conventions
 
@@ -97,4 +97,3 @@ saved result folders by `timestamp/model/experiment_id`. The main mappings are:
 | Subject-level difficulty analysis | Full matrices above; reduced VR panels use best input per architecture (`exp4`, `exp15`, `exp20`, `exp32`, `exp41`) and best architecture per input signal (`exp1`, `exp38`, `exp21`, `exp4`, `exp41`, `exp6`) |
 | Noise-related error analysis | VR goalkeeper PD/asymptotic model analyses, with selected model emphasis on `exp41`; ForDigitStress PD models, with selected emphasis on `exp201` and `exp202` |
 | VR sample-order and cognitive-task error analyses | `exp41` |
-

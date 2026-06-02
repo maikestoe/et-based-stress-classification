@@ -12,70 +12,84 @@ training, evaluation, and supplementary analyses for two datasets:
 The datasets themselves are not redistributed in this repository and must be
 obtained from their original providers.
 
-Dataset sources:
+## Data Availability
 
-- **VR goalkeeper dataset** (public):
-  Zenodo, DOI [10.5281/zenodo.17972964](https://doi.org/10.5281/zenodo.17972964)
+The VR Goalkeeper dataset generated during the current study is publicly
+available via Zenodo at [https://zenodo.org/records/17972964](https://zenodo.org/records/17972964).
+For convenience, this repository also includes the processed VR Goalkeeper
+dataframes used by the training scripts:
+`data/vr_goalkeeper/dataframes/DL_out.pkl` and
+`data/vr_goalkeeper/dataframes/features_out.pkl`.
 
-- **ForDigitStress dataset** (restricted):
-  Heimerl et al., DOI [10.1109/TAFFC.2024.3501400](https://doi.org/10.1109/TAFFC.2024.3501400)  
-  Access must be requested via [hcai.eu/fordigitstress/](https://hcai.eu/fordigitstress/)  
-  and is subject to the dataset’s EULA (non-commercial use, no redistribution).
-- 
-## Data Access and License Notes
+The ForDigitStress dataset is publicly available for research and
+non-commercial use. Access to the dataset can be requested at
+[https://hcai.eu/fordigitstress](https://hcai.eu/fordigitstress), and the
+dataset should be cited as Heimerl et al.,
+[https://doi.org/10.1109/TAFFC.2024.3501400](https://doi.org/10.1109/TAFFC.2024.3501400).
+Use of the ForDigitStress dataset is subject to the dataset's EULA; this
+repository therefore does not redistribute raw data, processed data, trained
+models, or other dataset-derived artefacts for ForDigitStress. When using
+ForDigitStress, please follow the acknowledgement requirements in its EULA.
 
-This repository contains code only and does not include raw data, processed data,
-trained models, or dataset-derived artefacts.
+## Code Availability
 
-Users are responsible for complying with the licenses and access conditions of
-the respective datasets. The VR goalkeeper dataset is publicly available and
-should be cited via its Zenodo record. 
+The complete code used for preprocessing, feature extraction, model training,
+evaluation, and supplementary analysis is publicly available at
+[https://github.com/maikestoe/et-based-stress-classification](https://github.com/maikestoe/et-based-stress-classification).
+For publication or archival submission, cite the GitHub release, commit, or
+repository archive that corresponds to the manuscript version.
 
-The ForDigitStress dataset requires
-authorized access and must be used in accordance with its EULA. Do not share or 
-publish raw data, derived datasets, trained models, or any other
-artefacts that would enable redistribution of the datasets or bypass their access 
-restrictions.
+## Third-Party Method Acknowledgements
 
-When using the ForDigitStress dataset, please acknowledge it according to its
-EULA, for example:
+Parts of the preprocessing and feature-extraction code are Python adaptations
+or implementations of published eye-tracking methods. `src/pd_utils.py` adapts
+pupil-size preprocessing from Kret and Sjak-Shie (2019). `src/fix_utils.py`
+implements/adapts fixation and eye-movement procedures from Duchowski et al.
+(2002). `src/IPA_utils.py` implements IPA and LHIPA metrics from Duchowski et
+al. (2018, 2020). These implementations were modified for the datasets and
+workflow used in this study.
 
-> (Portions of) the research in this work use the ForDigitStress Dataset
-> collected for the ForDigitHealth project.
+Relevant references:
 
-## Data Access Procedures
+- Kret, M. E., & Sjak-Shie, E. E. (2019). Preprocessing pupil size data:
+  Guidelines and code. *Behavior Research Methods*, 51, 1336-1342.
+  [https://doi.org/10.3758/s13428-018-1075-y](https://doi.org/10.3758/s13428-018-1075-y)
+- Duchowski, A. T., Medlin, E., Cournia, N., Murphy, H., Gramopadhye, A.,
+  Nair, S., Vorah, J., & Melloy, B. (2002). 3-D eye movement analysis.
+  *Behavior Research Methods, Instruments, & Computers*, 34(4), 573-591.
+  [https://doi.org/10.3758/BF03195486](https://doi.org/10.3758/BF03195486)
+- Duchowski, A. T., Krejtz, K., Krejtz, I., Biele, C., Niedzielska, A.,
+  Kiefer, P., Raubal, M., & Giannopoulos, I. (2018). The Index of Pupillary
+  Activity. *Proceedings of CHI 2018*.
+  [https://doi.org/10.1145/3173574.3173856](https://doi.org/10.1145/3173574.3173856)
+- Duchowski, A. T., Krejtz, K., Gehrer, N. A., Bafna, T., & Baekgaard, P.
+  (2020). The Low/High Index of Pupillary Activity. *Proceedings of CHI 2020*.
+  [https://doi.org/10.1145/3313831.3376394](https://doi.org/10.1145/3313831.3376394)
 
-The repository provides preprocessing scripts documenting how each dataset is
-loaded and transformed.
+## Data Preparation
 
-- **VR goalkeeper dataset** (public):
-  - download from Zenodo,
-  - place files in `data/vr_goalkeeper/raw/`,
-  - run:
-    ```bash
-    python scripts/preprocessing/preprocess_vr_goalkeeper.py
-    ```
-  - example:
-    ```python
-    import pandas as pd
-    df = pd.read_csv("data/vr_goalkeeper/raw/LogID_0_base1.csv", sep=";")
-    ```
+Place authorized dataset files under `data/` before running preprocessing. The
+expected folder layout and dataset-specific access notes are documented in
+[`data/README.md`](data/README.md), including minimal examples for reading one
+raw file from each dataset. The preprocessing commands used for reproduction
+are listed below.
 
-- **ForDigitStress dataset** (restricted):
-  - request access via https://hcai.eu/fordigitstress/,
-  - place authorized files in `data/fordigitstress/raw/`,
-  - run:
-    ```bash
-    python scripts/preprocessing/preprocess_fordigitstress.py
-    ```
-  - example:
-    ```python
-    import pandas as pd
-    df = pd.read_csv("data/fordigitstress/raw/VP1/stress.csv", sep=";")
-    ```
+The included VR Goalkeeper dataframes allow users to start directly from
+training or evaluation for that public dataset. To verify preprocessing from raw
+VR Goalkeeper files, rerun the preprocessing command below; it will regenerate
+the same expected dataframe paths.
 
-The preprocessing scripts define the expected structure and processing steps for
-both datasets.
+This repository also includes a small set of recovered VR Goalkeeper result
+artefacts under [`results/`](results/README.md). These files allow selected
+confusion-matrix and ROC/precision-recall figures to be recreated without
+rerunning training or storing model checkpoints.
+
+The final VR Goalkeeper model-comparison source table is generated from the
+saved `final_summary.txt` training logs with:
+
+```bash
+python scripts/analysis/export_vr_source_data.py
+```
 
 ## Repository Structure
 
@@ -86,7 +100,8 @@ both datasets.
 ├── data/
 │   └── README.md
 ├── configs/
-│   └── examples/
+│   ├── examples/
+│   └── paper/
 ├── batch_scripts/
 │   └── examples/
 ├── scripts/
@@ -102,7 +117,12 @@ both datasets.
 - `scripts/training/` contains training entry points for deep-learning models and the feature-based baseline.
 - `scripts/evaluation/` contains prediction recovery and replotting entry points.
 - `scripts/analysis/` contains supplementary analyses such as confidence intervals, calibration-related plots, statistical testing, attribution plots, noise/error analyses, and model-comparison figures.
-- `configs/examples/` contains representative example configurations only. The full experiment matrix used in the paper consisted of many closely related configurations and is intentionally not duplicated one-by-one here.
+- `configs/examples/` contains runnable configurations for the main paper
+  examples and local smoke tests.
+- `configs/paper/` contains a compact experiment matrix mapping every final
+  paper experiment ID to its dataset, architecture, and input signal. The full
+  paper matrix consists of systematic combinations of these fields with the
+  shared hyperparameter search spaces shown in `configs/examples/`.
 - `batch_scripts/examples/` contains a generic SLURM example showing how to launch a configuration on a cluster.
 
 ## Environment
@@ -124,27 +144,6 @@ package selection. If installation through `pyproject.toml` is not suitable for
 your machine, install the dependencies manually following the versions listed
 there.
 
-## Data Layout
-
-Create the following folder structure after downloading the public datasets:
-
-```text
-data/
-├── vr_goalkeeper/
-│   ├── raw/
-│   └── dataframes/
-│       ├── DL_out.pkl
-│       └── features_out.pkl
-└── fordigitstress/
-    ├── raw/
-    └── dataframes/
-        └── DL_out.pkl
-```
-
-The preprocessing scripts generate the `dataframes/` files used by the training
-and evaluation code. If you already have preprocessed files, you can place them
-directly in the expected locations and start from training or evaluation.
-
 ## Model Checkpoints
 
 The repository enables reproduction through dataset access, preprocessing,
@@ -154,19 +153,23 @@ training code, configuration files, and evaluation scripts.
   All model checkpoints were generated during the study. However, the full set
   comprises hundreds of fold-specific models (30 configurations × 27 folds),
   which are not included due to their size and limited practical usefulness.
-  Representative checkpoints can be provided by the authors upon request.
+  The checkpoints can be regenerated from the public data, code, configuration
+  matrix, and training procedure described here. The original training was
+  performed with a single NVIDIA RTX 3080 GPU with 10 GB VRAM and Intel Xeon
+  CPUs.
 
 - **ForDigitStress dataset (restricted)**:  
   Model checkpoints are not distributed. Due to the dataset’s restricted-access
   EULA, derivative artefacts such as trained models are not shared through this
-  repository.
+  repository. They can be regenerated by authorized users with access to the
+  dataset.
 
 ## Reproducing the Paper Results
 
 The full paper results were produced with nested leave-one-subject-out
 cross-validation and Optuna-based hyperparameter optimization. This is
 computationally expensive. The commands below show the reproducibility workflow
-using representative example configurations.
+using the main runnable configurations and the compact paper matrix.
 
 For a quick local sanity check before launching full runs, see
 [`docs_test_matrix.md`](docs_test_matrix.md). The test matrix covers
@@ -251,47 +254,160 @@ python scripts/evaluation/replot_attribution_maps.py \
   --mean-limits local
 ```
 
-### 5. Recreate Evaluation and Supplementary Figures
+### 5. Recreate Main Manuscript Figures
 
-Confusion matrices:
+The manuscript contains a mixture of conceptual/data-illustration figures and
+figures generated from model outputs. Figure 1 is a schematic overview and is
+not generated by an analysis script. Figures 2 and 3 show representative
+preprocessed time-series examples from the datasets; these can be recreated by
+reading the processed dataframes described above and plotting selected signal
+columns, but they are not tied to a fixed model-output script.
+
+The main manuscript figures generated from the repository's evaluation outputs
+are recreated as follows.
+
+Model-comparison bar plot (main manuscript Figure 4):
+
+```bash
+python scripts/analysis/export_vr_source_data.py
+python scripts/analysis/plot_model_comparison.py --dataset both --no-latex
+```
+
+The first command regenerates the compact VR Goalkeeper source-data table in
+`results/source_data/` from saved `final_summary.txt` logs when those logs are
+present. The plotting script uses that table for the VR Goalkeeper panels and
+the reported ForDigitStress summary values embedded in the plotting script,
+because ForDigitStress result artefacts are not redistributed.
+
+Representative confusion matrices (main manuscript Figure 5):
 
 ```bash
 python scripts/evaluation/replot_confusion_matrices.py \
-  --config configs/examples/vr_goalkeeper_convlstm3_asymptotic_recovery.json
+  --config configs/examples/vr_goalkeeper_convlstm3_asymptotic_recovery.json \
+  --no-latex
+
+python scripts/evaluation/replot_confusion_matrices.py \
+  --config configs/examples/vr_goalkeeper_cnn_pd.json \
+  --no-latex
+
+python scripts/evaluation/replot_confusion_matrices.py \
+  --config configs/examples/fordigitstress_cnn_pd_recovery.json \
+  --no-latex
 ```
 
-ROC and precision-recall curves:
+The included `results/` folder contains compact recovered VR Goalkeeper outputs
+for the first two commands. The ForDigitStress confusion matrix can be recreated
+by authorized users after generating the corresponding recovered result files.
+
+Compact PD CNN occlusion comparison (main manuscript Figure 6):
+
+```bash
+python scripts/analysis/plot_main_pd_occlusion_comparison.py
+```
+
+By default, this script expects recovered mean occlusion payloads at:
+
+```text
+results/vr_goalkeeper/DL/2024-08-09/CNN/1/recovery/occlusion/correct_stress_mean_occlusion.npz
+results/fordigitstress/DL/2024-08-09/CNN/201/recovery/occlusion/correct_stress_mean_occlusion.npz
+```
+
+These payloads are created by the attribution recovery workflow. The
+ForDigitStress payload is not redistributed because it is a dataset-derived
+artefact. If the payloads are stored elsewhere, pass them explicitly:
+
+```bash
+python scripts/analysis/plot_main_pd_occlusion_comparison.py \
+  --vr-payload path/to/vr/correct_stress_mean_occlusion.npz \
+  --fordigit-payload path/to/fordigit/correct_stress_mean_occlusion.npz
+```
+
+### 6. Recreate Supplementary Material Figures and Analyses
+
+Training-loss curves (Supplementary Fig. S1) are generated during model
+training and saved in the corresponding outer-fold result folders. Rerun the
+training commands above to regenerate these fold-level plots.
+
+Random-forest feature-selection frequencies (Supplementary Fig. S2):
+
+```bash
+python scripts/analysis/plot_rf_feature_selection.py --no-latex
+```
+
+Aggregated saliency and occlusion case plots for the four prediction cases
+(correct non-stress, correct stress, wrong non-stress, wrong stress) can be
+recreated from recovered attribution payloads with:
+
+```bash
+python scripts/evaluation/replot_attribution_maps.py \
+  --config configs/examples/vr_goalkeeper_convlstm3_asymptotic_recovery.json \
+  --methods saliency occlusion \
+  --payload-kind mean \
+  --mean-limits local \
+  --no-latex
+```
+
+Use `--payload-kind single` to recreate individual-example attribution plots, or
+`--payload-kind all` to recreate both individual-example and aggregated plots.
+The same command structure applies to other recovery configs after the
+corresponding attribution payloads have been generated.
+
+ROC and precision-recall curves for the VR Goalkeeper dataset (Supplementary
+Fig. S7):
 
 ```bash
 python scripts/analysis/plot_roc_pr_curves.py \
-  --config-list configs/examples/vr_goalkeeper_curve_comparison.json
+  --config-list configs/examples/vr_goalkeeper_curve_comparison.json \
+  --no-latex
 ```
 
-Model-comparison bar plots:
+ROC and precision-recall curves for the ForDigitStress dataset (Supplementary
+Fig. S8):
 
 ```bash
-python scripts/analysis/plot_model_comparison.py --dataset both
+python scripts/analysis/plot_roc_pr_curves.py \
+  --config-list configs/examples/fordigitstress_curve_comparison.json \
+  --no-latex
 ```
 
-Statistical testing and confidence intervals:
+The VR Goalkeeper curve command can use the compact recovered arrays included
+for selected models. The ForDigitStress curve command requires authorized local
+ForDigitStress-derived recovery files.
+
+Statistical testing and confidence intervals reported in the supplementary
+materials:
 
 ```bash
 python scripts/analysis/statistical_significance.py
 python scripts/analysis/confidence_intervals.py
 ```
 
-Subject-level and noise-related error analyses:
+Subject-level, noise-related, sample-order, cognitive-task, and computational
+complexity analyses:
 
 ```bash
 python scripts/analysis/error_analysis_subjects.py
 python scripts/analysis/noise_error_analysis.py
+python scripts/analysis/model_complexity.py
+python src/exp41_sample_order_error_analysis.py
+python src/exp41_cognitive_task_error_analysis.py
 ```
+
+These supplementary analyses require the corresponding recovered per-fold or
+per-sample result files. If only the compact public artefacts in `results/` are
+available, rerun training and recovery first for analyses that report missing
+inputs.
 
 ## Notes on Reproducibility
 
-- The provided configurations are examples that document representative settings
-  used in the manuscript. They are intended as templates for reproducing the full
-  experiment matrix.
+- The full paper experiment set is listed in
+  `configs/paper/paper_experiment_matrix.csv`. The rows specify the final
+  experiment IDs, datasets, architectures, and input signals reported in the
+  manuscript.
+- The runnable JSON files in `configs/examples/` document the shared training
+  settings, participant splits, Optuna search spaces, and recovery settings used
+  for the main examples. The remaining paper experiments use the same structure
+  with the model/input fields listed in the compact matrix.
 - Random seeds, subject-wise splits, and Optuna search spaces are defined in the
   configuration files and training utilities.
 - Some analyses require trained outer-fold models and recovered prediction files.

@@ -1,0 +1,420 @@
+Final Average Validation F1 Score: 0.7267
+Standard Deviation: 0.2316
+
+Final Average Weighted Validation F1 Score: 0.7267
+Standard Deviation: 0.2316
+
+Final Average Validation AUC: 0.7619
+Standard Deviation: 0.1815
+
+Final Average Validation Precision: 0.7667
+Standard Deviation: 0.1763
+
+Final Average Validation Recall: 0.7667
+Standard Deviation: 0.1763
+
+Best Parameters for test id 0:
+  learning_rate: 0.0001565336720003827
+  weight_alpha: 0.40437718592166416
+  weight_gamma: 0.5020959665495343
+  batch_size: 32
+  units: 64
+  units2: 512
+  units3: 512
+  k_l1: 0.015278365220010092
+  k_l2: 0.01637128789007598
+  c_value: 0.4828964476952573
+
+Best Parameters for test id 1:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 2:
+  learning_rate: 0.00036391823983108784
+  weight_alpha: 0.2126323916269041
+  weight_gamma: 0.3284317078600487
+  batch_size: 32
+  units: 16
+  units2: 128
+  units3: 256
+  k_l1: 0.005244277481567703
+  k_l2: 0.04861023462573024
+  c_value: 0.2239277902458301
+
+Best Parameters for test id 3:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 4:
+  learning_rate: 0.0042618940921469815
+  weight_alpha: 0.558777585995921
+  weight_gamma: 0.45001483099919753
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.0070776641463114525
+  k_l2: 0.047250491646888895
+  c_value: 0.4576826345557271
+
+Best Parameters for test id 6:
+  learning_rate: 0.0008606249319473941
+  weight_alpha: 0.8970128606757575
+  weight_gamma: 1.5707375542748103
+  batch_size: 32
+  units: 32
+  units2: 128
+  units3: 256
+  k_l1: 0.007958532102740284
+  k_l2: 0.039769659004481914
+  c_value: 0.08972966108197727
+
+Best Parameters for test id 7:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 8:
+  learning_rate: 0.0001931667886310962
+  weight_alpha: 0.24313584885956063
+  weight_gamma: 1.3083056313856956
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 256
+  k_l1: 0.013281908547636265
+  k_l2: 0.0741703496046922
+  c_value: 0.43269913713965397
+
+Best Parameters for test id 9:
+  learning_rate: 0.0006561551726198084
+  weight_alpha: 0.6532899512904986
+  weight_gamma: 0.1552778638869996
+  batch_size: 32
+  units: 16
+  units2: 256
+  units3: 512
+  k_l1: 0.008649295915457749
+  k_l2: 0.059995635700489575
+  c_value: 0.791029593997016
+
+Best Parameters for test id 10:
+  learning_rate: 0.00033551970427545295
+  weight_alpha: 0.6761612410315601
+  weight_gamma: 1.2288814386083606
+  batch_size: 32
+  units: 16
+  units2: 256
+  units3: 512
+  k_l1: 0.0117681058034486
+  k_l2: 0.02052235292128569
+  c_value: 0.8086482243613797
+
+Best Parameters for test id 11:
+  learning_rate: 0.0017356776138892549
+  weight_alpha: 0.9373434336487634
+  weight_gamma: 0.20694250392525393
+  batch_size: 32
+  units: 16
+  units2: 128
+  units3: 128
+  k_l1: 0.04724475000023955
+  k_l2: 0.0377113418641877
+  c_value: 0.6143024622414264
+
+Best Parameters for test id 12:
+  learning_rate: 0.0003706990833878561
+  weight_alpha: 0.8295441379810609
+  weight_gamma: 0.0586809195458996
+  batch_size: 32
+  units: 128
+  units2: 512
+  units3: 512
+  k_l1: 0.012492211137392607
+  k_l2: 0.05496747123856019
+  c_value: 0.5957080955549858
+
+Best Parameters for test id 13:
+  learning_rate: 0.00017862542155768
+  weight_alpha: 0.2864025913155521
+  weight_gamma: 0.33733883645452967
+  batch_size: 32
+  units: 128
+  units2: 512
+  units3: 512
+  k_l1: 0.011040605343102854
+  k_l2: 0.07009838272508723
+  c_value: 0.8671497967142338
+
+Best Parameters for test id 14:
+  learning_rate: 0.000531101270752289
+  weight_alpha: 0.8020903880916544
+  weight_gamma: 1.6092871496313248
+  batch_size: 32
+  units: 16
+  units2: 256
+  units3: 512
+  k_l1: 0.008854267601378833
+  k_l2: 0.0025575879601034378
+  c_value: 0.9873043326835342
+
+Best Parameters for test id 15:
+  learning_rate: 0.0001900404482224375
+  weight_alpha: 0.3075162426181872
+  weight_gamma: 0.0807351949243138
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 256
+  k_l1: 0.0016720318978804757
+  k_l2: 0.07418820798533492
+  c_value: 0.03405949353220089
+
+Best Parameters for test id 16:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 17:
+  learning_rate: 0.0005981607190527567
+  weight_alpha: 0.44156231335011586
+  weight_gamma: 1.5596818248433966
+  batch_size: 32
+  units: 64
+  units2: 512
+  units3: 64
+  k_l1: 5.654586558425517e-05
+  k_l2: 0.018002049686243114
+  c_value: 0.20473819588958345
+
+Best Parameters for test id 18:
+  learning_rate: 0.0010341940367620463
+  weight_alpha: 0.9331699955891795
+  weight_gamma: 0.30287888797089946
+  batch_size: 32
+  units: 128
+  units2: 512
+  units3: 16
+  k_l1: 0.025196070402158207
+  k_l2: 0.0584436870815912
+  c_value: 0.08701165083046564
+
+Best Parameters for test id 19:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 20:
+  learning_rate: 0.0001560591780945022
+  weight_alpha: 0.4021793343982136
+  weight_gamma: 0.6909737363385187
+  batch_size: 32
+  units: 64
+  units2: 512
+  units3: 512
+  k_l1: 0.015723417718195364
+  k_l2: 0.01433213298874423
+  c_value: 0.4858312239193346
+
+Best Parameters for test id 21:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 22:
+  learning_rate: 0.000996579501528839
+  weight_alpha: 0.4562057906002084
+  weight_gamma: 1.5397273047584605
+  batch_size: 32
+  units: 64
+  units2: 512
+  units3: 512
+  k_l1: 0.0010192110271256757
+  k_l2: 0.05020967422029446
+  c_value: 0.40335898616720056
+
+Best Parameters for test id 23:
+  learning_rate: 0.0006031356357823874
+  weight_alpha: 0.226563367384049
+  weight_gamma: 0.0567501246518034
+  batch_size: 32
+  units: 64
+  units2: 256
+  units3: 256
+  k_l1: 0.001420803483512631
+  k_l2: 0.04097406316035034
+  c_value: 0.9814552037880306
+
+Best Parameters for test id 24:
+  learning_rate: 0.0020994742330470505
+  weight_alpha: 0.7427931779559639
+  weight_gamma: 0.010160370786718609
+  batch_size: 32
+  units: 128
+  units2: 512
+  units3: 64
+  k_l1: 0.014657554081966463
+  k_l2: 0.03636614985796962
+  c_value: 0.6099298744378359
+
+Best Parameters for test id 26:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 27:
+  learning_rate: 0.0002543705295146836
+  weight_alpha: 0.31088177486671864
+  weight_gamma: 0.4491247177183266
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.036874340214809724
+  k_l2: 0.06191884197621716
+  c_value: 0.46656433385018475
+
+Best Parameters for test id 29:
+  learning_rate: 0.00024285758168121255
+  weight_alpha: 0.22719127109623796
+  weight_gamma: 0.48051944422326
+  batch_size: 32
+  units: 16
+  units2: 512
+  units3: 512
+  k_l1: 0.002247957555605055
+  k_l2: 0.06039980050717575
+  c_value: 0.5773282482971367
+
+Performance for test id 0:
+ Macro f1 score: 0.9498746395111084
+
+Performance for test id 1:
+ Macro f1 score: 0.43573665618896484
+
+Performance for test id 2:
+ Macro f1 score: 0.9498746395111084
+
+Performance for test id 3:
+ Macro f1 score: 0.9498746395111084
+
+Performance for test id 4:
+ Macro f1 score: 0.716312050819397
+
+Performance for test id 6:
+ Macro f1 score: 0.7748591899871826
+
+Performance for test id 7:
+ Macro f1 score: 0.4202898144721985
+
+Performance for test id 8:
+ Macro f1 score: 0.3333333134651184
+
+Performance for test id 9:
+ Macro f1 score: 0.9498746395111084
+
+Performance for test id 10:
+ Macro f1 score: 0.8465472459793091
+
+Performance for test id 11:
+ Macro f1 score: 0.7395832538604736
+
+Performance for test id 12:
+ Macro f1 score: 0.38660210371017456
+
+Performance for test id 13:
+ Macro f1 score: 0.8194712400436401
+
+Performance for test id 14:
+ Macro f1 score: 1.0
+
+Performance for test id 15:
+ Macro f1 score: 0.3333333134651184
+
+Performance for test id 16:
+ Macro f1 score: 0.8465472459793091
+
+Performance for test id 17:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 18:
+ Macro f1 score: 0.6930946111679077
+
+Performance for test id 19:
+ Macro f1 score: 0.6266666650772095
+
+Performance for test id 20:
+ Macro f1 score: 0.38660210371017456
+
+Performance for test id 21:
+ Macro f1 score: 0.7493734359741211
+
+Performance for test id 22:
+ Macro f1 score: 1.0
+
+Performance for test id 23:
+ Macro f1 score: 0.716312050819397
+
+Performance for test id 24:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 26:
+ Macro f1 score: 0.3333333134651184
+
+Performance for test id 27:
+ Macro f1 score: 0.7630019187927246
+
+Performance for test id 29:
+ Macro f1 score: 0.9498746395111084
+

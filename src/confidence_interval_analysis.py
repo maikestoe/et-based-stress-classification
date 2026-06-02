@@ -9,7 +9,7 @@ from statistics import mean, stdev
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-CONFIG_DIR = os.path.join(SCRIPT_DIR, "config_files")
+CONFIG_DIR = os.path.join(PROJECT_ROOT, "configs", "examples")
 RESULTS_ROOT = os.path.join(PROJECT_ROOT, "results")
 DEFAULT_OUTPUT_DIR = os.path.join(RESULTS_ROOT, "confidence_intervals")
 

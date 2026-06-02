@@ -1,0 +1,366 @@
+Final Average Validation F1 Score: 0.9455
+Standard Deviation: 0.0677
+
+Final Average Weighted Validation F1 Score: 0.9455
+Standard Deviation: 0.0677
+
+Final Average Validation AUC: 0.9337
+Standard Deviation: 0.0769
+
+Final Average Validation Precision: 0.9463
+Standard Deviation: 0.0655
+
+Final Average Validation Recall: 0.9463
+Standard Deviation: 0.0655
+
+Best Parameters for test id 0:
+  learning_rate: 0.002268076911086574
+  weight_alpha: 0.8959433433122961
+  weight_gamma: 3.411208971672702
+  batch_size: 32
+  filter: 128
+  k_size: 4
+  drop: 0.12158512124801868
+  num_segments: 5
+
+Best Parameters for test id 1:
+  learning_rate: 0.0014605844948450983
+  weight_alpha: 0.3717034661896301
+  weight_gamma: 3.3779102481444356
+  batch_size: 32
+  filter: 256
+  k_size: 4
+  drop: 0.1634208195913479
+  num_segments: 5
+
+Best Parameters for test id 2:
+  learning_rate: 0.0006087557219269512
+  weight_alpha: 0.10113047031023847
+  weight_gamma: 2.7465668751711405
+  batch_size: 32
+  filter: 128
+  k_size: 4
+  drop: 0.268315092134627
+  num_segments: 25
+
+Best Parameters for test id 3:
+  learning_rate: 0.000875255144632596
+  weight_alpha: 0.21807809668250372
+  weight_gamma: 3.112181384338791
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.20281343555598208
+  num_segments: 25
+
+Best Parameters for test id 4:
+  learning_rate: 0.0028617986549451116
+  weight_alpha: 0.6999285968301988
+  weight_gamma: 1.7772601561177708
+  batch_size: 32
+  filter: 512
+  k_size: 2
+  drop: 0.2236971769627218
+  num_segments: 25
+
+Best Parameters for test id 6:
+  learning_rate: 0.0008472882381682763
+  weight_alpha: 0.6648516672711549
+  weight_gamma: 0.7966971874858564
+  batch_size: 32
+  filter: 128
+  k_size: 4
+  drop: 0.31466050832012665
+  num_segments: 25
+
+Best Parameters for test id 7:
+  learning_rate: 0.0008766644533913234
+  weight_alpha: 0.7322149470720093
+  weight_gamma: 2.7971574500123224
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.21924308195536088
+  num_segments: 25
+
+Best Parameters for test id 8:
+  learning_rate: 0.0003391112242485808
+  weight_alpha: 0.36253466813657936
+  weight_gamma: 2.8810913988910825
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.22622025721783312
+  num_segments: 25
+
+Best Parameters for test id 9:
+  learning_rate: 0.0007059606561541445
+  weight_alpha: 0.9858231179930605
+  weight_gamma: 3.398865431816173
+  batch_size: 32
+  filter: 512
+  k_size: 4
+  drop: 0.37482106993719716
+  num_segments: 5
+
+Best Parameters for test id 10:
+  learning_rate: 0.004275832833614041
+  weight_alpha: 0.7140232850425139
+  weight_gamma: 3.833529347432895
+  batch_size: 32
+  filter: 128
+  k_size: 3
+  drop: 0.1378548405725325
+  num_segments: 25
+
+Best Parameters for test id 11:
+  learning_rate: 0.002099172188076633
+  weight_alpha: 0.5698437328190009
+  weight_gamma: 2.1435055694813823
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.19655517758929258
+  num_segments: 25
+
+Best Parameters for test id 12:
+  learning_rate: 0.0013052440768420628
+  weight_alpha: 0.7836721885472187
+  weight_gamma: 1.9930951729812063
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.22908629195529048
+  num_segments: 25
+
+Best Parameters for test id 13:
+  learning_rate: 0.0007218271388232325
+  weight_alpha: 0.644971734248179
+  weight_gamma: 4.7743521658050945
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.2452252395162688
+  num_segments: 25
+
+Best Parameters for test id 14:
+  learning_rate: 0.0012662931468776155
+  weight_alpha: 0.36390529528231064
+  weight_gamma: 3.872397271342943
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.17900126255719934
+  num_segments: 25
+
+Best Parameters for test id 15:
+  learning_rate: 0.0019543004302930243
+  weight_alpha: 0.703018251201299
+  weight_gamma: 4.796080389921377
+  batch_size: 32
+  filter: 512
+  k_size: 4
+  drop: 0.14556943629842123
+  num_segments: 25
+
+Best Parameters for test id 16:
+  learning_rate: 0.0012662931468776155
+  weight_alpha: 0.36390529528231064
+  weight_gamma: 3.872397271342943
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.17900126255719934
+  num_segments: 25
+
+Best Parameters for test id 17:
+  learning_rate: 0.0002782341120284072
+  weight_alpha: 0.3742823617150433
+  weight_gamma: 2.044346704703275
+  batch_size: 32
+  filter: 256
+  k_size: 4
+  drop: 0.34336512792087603
+  num_segments: 25
+
+Best Parameters for test id 18:
+  learning_rate: 0.00036497187975022754
+  weight_alpha: 0.2824124150086615
+  weight_gamma: 0.7198498205570178
+  batch_size: 32
+  filter: 256
+  k_size: 4
+  drop: 0.3403030931359189
+  num_segments: 25
+
+Best Parameters for test id 19:
+  learning_rate: 0.0021797197982965926
+  weight_alpha: 0.47387049336634973
+  weight_gamma: 1.491986661698541
+  batch_size: 32
+  filter: 256
+  k_size: 4
+  drop: 0.30517829362030535
+  num_segments: 25
+
+Best Parameters for test id 20:
+  learning_rate: 0.0005185899834189369
+  weight_alpha: 0.5131050337669182
+  weight_gamma: 3.9479835455765344
+  batch_size: 32
+  filter: 512
+  k_size: 4
+  drop: 0.22612265170271856
+  num_segments: 25
+
+Best Parameters for test id 21:
+  learning_rate: 0.0018861014366502364
+  weight_alpha: 0.6085985009697257
+  weight_gamma: 0.8594077679435197
+  batch_size: 32
+  filter: 128
+  k_size: 4
+  drop: 0.4044627646785064
+  num_segments: 25
+
+Best Parameters for test id 22:
+  learning_rate: 0.0011104984270275309
+  weight_alpha: 0.5261853453755827
+  weight_gamma: 0.47334439513061766
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.28047230579171467
+  num_segments: 25
+
+Best Parameters for test id 23:
+  learning_rate: 0.0005288175831178425
+  weight_alpha: 0.3063045824563987
+  weight_gamma: 2.23395852828032
+  batch_size: 32
+  filter: 512
+  k_size: 4
+  drop: 0.4544432417236603
+  num_segments: 25
+
+Best Parameters for test id 24:
+  learning_rate: 0.0022518227127581733
+  weight_alpha: 0.6065049928050823
+  weight_gamma: 2.1938874034942035
+  batch_size: 32
+  filter: 128
+  k_size: 3
+  drop: 0.2616470756815684
+  num_segments: 25
+
+Best Parameters for test id 26:
+  learning_rate: 0.0004962182283913206
+  weight_alpha: 0.5052453854065079
+  weight_gamma: 0.9196238513090556
+  batch_size: 32
+  filter: 512
+  k_size: 3
+  drop: 0.289742706262902
+  num_segments: 25
+
+Best Parameters for test id 27:
+  learning_rate: 0.0007155970218214038
+  weight_alpha: 0.5883019948959181
+  weight_gamma: 1.4500598441539567
+  batch_size: 32
+  filter: 512
+  k_size: 4
+  drop: 0.44085400928487994
+  num_segments: 25
+
+Best Parameters for test id 29:
+  learning_rate: 0.0008019489573643119
+  weight_alpha: 0.764280331426072
+  weight_gamma: 0.33403463140723355
+  batch_size: 32
+  filter: 512
+  k_size: 4
+  drop: 0.3873060468359454
+  num_segments: 25
+
+Performance for test id 0:
+ Macro f1 score: 0.924575686454773
+
+Performance for test id 1:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 2:
+ Macro f1 score: 1.0
+
+Performance for test id 3:
+ Macro f1 score: 0.9498746395111084
+
+Performance for test id 4:
+ Macro f1 score: 1.0
+
+Performance for test id 6:
+ Macro f1 score: 1.0
+
+Performance for test id 7:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 8:
+ Macro f1 score: 0.924575686454773
+
+Performance for test id 9:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 10:
+ Macro f1 score: 0.924953043460846
+
+Performance for test id 11:
+ Macro f1 score: 0.822222113609314
+
+Performance for test id 12:
+ Macro f1 score: 0.7333332896232605
+
+Performance for test id 13:
+ Macro f1 score: 1.0
+
+Performance for test id 14:
+ Macro f1 score: 1.0
+
+Performance for test id 15:
+ Macro f1 score: 0.8240100145339966
+
+Performance for test id 16:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 17:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 18:
+ Macro f1 score: 0.84962397813797
+
+Performance for test id 19:
+ Macro f1 score: 1.0
+
+Performance for test id 20:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 21:
+ Macro f1 score: 1.0
+
+Performance for test id 22:
+ Macro f1 score: 1.0
+
+Performance for test id 23:
+ Macro f1 score: 0.9749842882156372
+
+Performance for test id 24:
+ Macro f1 score: 0.9499999284744263
+
+Performance for test id 26:
+ Macro f1 score: 1.0
+
+Performance for test id 27:
+ Macro f1 score: 0.924953043460846
+
+Performance for test id 29:
+ Macro f1 score: 0.8742928504943848
+

@@ -15,7 +15,8 @@ from sklearn.metrics import average_precision_score, precision_recall_curve, roc
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_DIR = os.path.join(SCRIPT_DIR, "config_files")
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+CONFIG_DIR = os.path.join(PROJECT_ROOT, "configs", "examples")
 STYLE_PATH = os.path.join(SCRIPT_DIR, "plot_style2.txt")
 COMPARISON_PALETTE = [
     "#123B6D",
@@ -97,7 +98,7 @@ def normalize_path(path_value):
     expanded = os.path.expandvars(path_value)
     if os.path.isabs(expanded):
         return os.path.abspath(expanded)
-    return os.path.abspath(os.path.join(SCRIPT_DIR, expanded))
+    return os.path.abspath(os.path.join(PROJECT_ROOT, expanded))
 
 
 def load_json_config(config_path):

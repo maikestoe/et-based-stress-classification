@@ -1,0 +1,36 @@
+experiment_id,dataset,model,input_signal,input_column,main_use
+exp1,vr_goalkeeper,CNN,PD,meanDia_corrected,"PD-based CNN; confusion matrix; attribution analysis; statistical comparison with RF PD baseline"
+exp2,vr_goalkeeper,CNN,Angular velocity,velocity,Model comparison
+exp3,vr_goalkeeper,CNN,Angular acceleration,acceleration,Model comparison
+exp4,vr_goalkeeper,CNN,Visual angle,position,"Model comparison; ROC/PR representative; subject-difficulty analysis"
+exp5,vr_goalkeeper,CNN,Asymptotic model,asymptotic_model,"Model comparison; complexity analysis"
+exp6,vr_goalkeeper,CNN,Fixations,fix_array,"Model comparison; ROC/PR representative; subject-difficulty analysis"
+exp10,vr_goalkeeper,LSTM-1,PD,meanDia_corrected,Model comparison
+exp11,vr_goalkeeper,LSTM-1,Angular velocity,velocity,Model comparison
+exp12,vr_goalkeeper,LSTM-1,Angular acceleration,acceleration,Model comparison
+exp13,vr_goalkeeper,LSTM-1,Visual angle,position,Model comparison
+exp14,vr_goalkeeper,LSTM-1,Asymptotic model,asymptotic_model,"Model comparison; complexity analysis"
+exp15,vr_goalkeeper,LSTM-1,Fixations,fix_array,"Model comparison; subject-difficulty analysis"
+exp19,vr_goalkeeper,ConvLSTM-1,PD,meanDia_corrected,Model comparison
+exp20,vr_goalkeeper,ConvLSTM-1,Angular velocity,velocity,"Model comparison; subject-difficulty analysis"
+exp21,vr_goalkeeper,ConvLSTM-1,Angular acceleration,acceleration,"Model comparison; ROC/PR representative; subject-difficulty analysis"
+exp22,vr_goalkeeper,ConvLSTM-1,Visual angle,position,Model comparison
+exp23,vr_goalkeeper,ConvLSTM-1,Asymptotic model,asymptotic_model,"Model comparison; complexity analysis"
+exp24,vr_goalkeeper,ConvLSTM-1,Fixations,fix_array,Model comparison
+exp28,vr_goalkeeper,LSTM-3,PD,meanDia_corrected,Model comparison
+exp29,vr_goalkeeper,LSTM-3,Angular velocity,velocity,Model comparison
+exp30,vr_goalkeeper,LSTM-3,Angular acceleration,acceleration,Model comparison
+exp31,vr_goalkeeper,LSTM-3,Visual angle,position,Model comparison
+exp32,vr_goalkeeper,LSTM-3,Asymptotic model,asymptotic_model,"Model comparison; complexity analysis; subject-difficulty analysis"
+exp33,vr_goalkeeper,LSTM-3,Fixations,fix_array,Model comparison
+exp37,vr_goalkeeper,ConvLSTM-3,PD,meanDia_corrected,Model comparison
+exp38,vr_goalkeeper,ConvLSTM-3,Angular velocity,velocity,"Model comparison; ROC/PR representative; subject-difficulty analysis"
+exp39,vr_goalkeeper,ConvLSTM-3,Angular acceleration,acceleration,Model comparison
+exp40,vr_goalkeeper,ConvLSTM-3,Visual angle,position,Model comparison
+exp41,vr_goalkeeper,ConvLSTM-3,Asymptotic model,asymptotic_model,"Best overall model; confusion matrix; attribution analysis; RF comparison; ROC/PR; complexity; sample-order and cognitive-task error analyses"
+exp42,vr_goalkeeper,ConvLSTM-3,Fixations,fix_array,Model comparison
+exp201,fordigitstress,CNN,PD,meanDia_corrected,"Best macro-F1 model; confusion matrix; attribution analysis; ROC/PR; calibration; noise-related analysis"
+exp202,fordigitstress,LSTM-1,PD,meanDia_corrected,"Best weighted-F1 model; ROC/PR; calibration; noise-related analysis"
+exp203,fordigitstress,ConvLSTM-1,PD,meanDia_corrected,"Model comparison; ROC/PR"
+exp204,fordigitstress,LSTM-3,PD,meanDia_corrected,"Model comparison; ROC/PR"
+exp205,fordigitstress,ConvLSTM-3,PD,meanDia_corrected,"Model comparison; ROC/PR"

@@ -44,8 +44,8 @@ from DL_utils import get_training_data, process_data, set_DL_config
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_OUTPUT_SUBDIR = "complexity_analysis"
-CONFIG_DIR = os.path.join(SCRIPT_DIR, "config_files")
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+CONFIG_DIR = os.path.join(PROJECT_ROOT, "configs", "examples")
 LOCAL_DATA_ROOT = os.path.join(PROJECT_ROOT, "data")
 LOCAL_RESULTS_ROOT = os.path.join(PROJECT_ROOT, "results")
 MODEL_NAME_MAP = {

@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument(
         "--colormap",
         choices=["blue_yellow", "blue_yellow_inverted", "blues"],
-        default="blue_yellow",
+        default="blue_yellow_inverted",
         help="Colormap to use for the attribution heatmaps."
     )
     parser.add_argument(
@@ -79,6 +79,12 @@ def parse_args():
         "--tex-path",
         default=None,
         help="Optional path to LaTeX binaries."
+    )
+    parser.add_argument(
+        "--payload-kind",
+        choices=["all", "mean", "single"],
+        default="all",
+        help="Whether to replot all payloads, only aggregated mean payloads, or only single-example payloads."
     )
     return parser.parse_args()
 
@@ -286,11 +292,18 @@ def replot_payloads_for_method(method_dir, limit_mode):
     payload_paths = sorted(payload_paths)
     single_count = 0
     mean_count = 0
+    selected_count = 0
     failed_paths = []
     for payload_path in payload_paths:
         data = np.load(payload_path, allow_pickle=True)
+        is_mean_payload = "signal_matrix" in data.files
+        if payload_kind == "mean" and not is_mean_payload:
+            continue
+        if payload_kind == "single" and is_mean_payload:
+            continue
+        selected_count += 1
         try:
-            if "signal_matrix" in data.files:
+            if is_mean_payload:
                 replot_mean_payload(payload_path, limit_mode)
                 mean_count += 1
             else:
@@ -298,10 +311,10 @@ def replot_payloads_for_method(method_dir, limit_mode):
                 single_count += 1
         except Exception as exc:
             failed_paths.append((payload_path, str(exc)))
-    return single_count, mean_count, len(payload_paths), failed_paths
+    return single_count, mean_count, selected_count, failed_paths
 
 
-def replot_payloads_for_method_with_modes(method_dir, single_limit_mode, mean_limit_mode):
+def replot_payloads_for_method_with_modes(method_dir, single_limit_mode, mean_limit_mode, payload_kind="all"):
     payload_paths = []
     for root, _, files in os.walk(method_dir):
         for file_name in files:
@@ -311,11 +324,18 @@ def replot_payloads_for_method_with_modes(method_dir, single_limit_mode, mean_li
     payload_paths = sorted(payload_paths)
     single_count = 0
     mean_count = 0
+    selected_count = 0
     failed_paths = []
     for payload_path in payload_paths:
         data = np.load(payload_path, allow_pickle=True)
+        is_mean_payload = "signal_matrix" in data.files
+        if payload_kind == "mean" and not is_mean_payload:
+            continue
+        if payload_kind == "single" and is_mean_payload:
+            continue
+        selected_count += 1
         try:
-            if "signal_matrix" in data.files:
+            if is_mean_payload:
                 replot_mean_payload(payload_path, mean_limit_mode)
                 mean_count += 1
             else:
@@ -323,7 +343,7 @@ def replot_payloads_for_method_with_modes(method_dir, single_limit_mode, mean_li
                 single_count += 1
         except Exception as exc:
             failed_paths.append((payload_path, str(exc)))
-    return single_count, mean_count, len(payload_paths), failed_paths
+    return single_count, mean_count, selected_count, failed_paths
 
 
 def find_method_dirs(experiment_base, method_name):
@@ -367,6 +387,7 @@ def main():
                 method_dir,
                 single_limit_mode,
                 mean_limit_mode,
+                args.payload_kind,
             )
             method_single += single_count
             method_mean += mean_count

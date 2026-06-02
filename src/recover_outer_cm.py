@@ -41,7 +41,7 @@ except ImportError:
 
 STYLE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "plot_style2.txt"))
 PUBLICATION_LINE_COLOR = "#3E5F8A"
-ATTRIBUTION_STD_FILL_COLOR = "#E5C04A"
+ATTRIBUTION_STD_FILL_COLOR = "#5D7FA6"
 ATTRIBUTION_TITLE_FONTSIZE = 22
 ATTRIBUTION_AXIS_LABEL_FONTSIZE = 22
 ATTRIBUTION_TICK_FONTSIZE = 18
@@ -53,8 +53,8 @@ CONFUSION_CELL_LABEL_FONTSIZE = 20
 YELLOW_CURVE_COLOR = "#E5C04A"
 TRANSLUCENT_RED_CURVE_COLOR = (196 / 255.0, 79 / 255.0, 94 / 255.0, 0.78)
 SALIENCY_CMAP = LinearSegmentedColormap.from_list(
-    "saliency_blue_yellow",
-    ["#E5C04A", "#D8D786", "#8DBB6C", "#5D7FA6", "#123B6D"]
+    "saliency_blue_yellow_inverted",
+    ["#123B6D", "#5D7FA6", "#8DBB6C", "#D8D786", "#E5C04A"]
 )
 SALIENCY_ANNOTATION_COLOR = "#1F3552"
 INPUT_SIGNAL_LABELS = {
@@ -851,10 +851,10 @@ def plot_signal_with_saliency(
 
     fig, (ax1, ax2, ax3) = plt.subplots(
         3, 1,
-        figsize=(figsize[0], max(figsize[1], 8.2)),
+        figsize=(figsize[0], max(figsize[1], 7.7)),
         constrained_layout=True,
         sharex=True,
-        gridspec_kw={"height_ratios": [3, 3, 1], "hspace": 0.18}
+        gridspec_kw={"height_ratios": [2.2, 2.7, 0.55], "hspace": 0.08}
     )
 
     # --- Top panel: signal ---
@@ -873,7 +873,7 @@ def plot_signal_with_saliency(
     # Highlight top salient regions with a light background overlay.
     for rank, (start, end, mean_val) in enumerate(top_regions, start=1):
         region_color = SALIENCY_CMAP(np.clip(mean_val, 0.0, 1.0))
-        ax1.axvspan(start, end, color=region_color, alpha=0.18, zorder=1, ec="none")
+        ax1.axvspan(start, end, color=region_color, alpha=0.10, zorder=1, ec="none")
         ax1.text(
             x=(start + end) / 2,
             y=y_text,
@@ -960,10 +960,10 @@ def save_mean_saliency_case_plot(output_base_path, case_name, saliency_series_li
 
     fig, (ax1, ax2) = plt.subplots(
         2, 1,
-        figsize=(9, 5.8),
+        figsize=(9, 5.2),
         constrained_layout=True,
         sharex=True,
-        gridspec_kw={"height_ratios": [3, 1], "hspace": 0.12}
+        gridspec_kw={"height_ratios": [2.8, 0.55], "hspace": 0.06}
     )
 
     ax1.plot(time, mean_saliency, color=PUBLICATION_LINE_COLOR, linewidth=1.6)
@@ -1043,7 +1043,7 @@ def save_mean_signal_and_saliency_case_plot(
         str(signal_label).strip().lower() == "asymptotic model"
         and str(attribution_label).strip().lower() == "occlusion importance"
     )
-    figure_height = 8.0 if is_asymptotic_mean_occlusion else 7.2
+    figure_height = 7.2 if is_asymptotic_mean_occlusion else 6.6
     save_padding = 0.24 if is_asymptotic_mean_occlusion else 0.08
 
     fig, (ax1, ax2, ax3) = plt.subplots(
@@ -1051,7 +1051,7 @@ def save_mean_signal_and_saliency_case_plot(
         figsize=(9, figure_height),
         constrained_layout=True,
         sharex=True,
-        gridspec_kw={"height_ratios": [3, 3, 1], "hspace": 0.12}
+        gridspec_kw={"height_ratios": [2.1, 2.6, 0.5], "hspace": 0.06}
     )
 
     ax1.plot(time, mean_signal, color=PUBLICATION_LINE_COLOR, linewidth=1.6)
@@ -1060,7 +1060,7 @@ def save_mean_signal_and_saliency_case_plot(
         mean_signal - std_signal,
         mean_signal + std_signal,
         color=ATTRIBUTION_STD_FILL_COLOR,
-        alpha=0.24
+        alpha=0.10
     )
     signal_label_y_coord = 0.58 if is_asymptotic_mean_occlusion else 0.5
     signal_label_x_coord = -0.13 if is_asymptotic_mean_occlusion else -0.12

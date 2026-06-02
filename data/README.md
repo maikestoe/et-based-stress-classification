@@ -1,15 +1,20 @@
 # Data Folder
 
-Place the downloaded datasets or preprocessed data here. The repository does
-not redistribute data files.
+Place the downloaded datasets or preprocessed data here. This repository
+includes the processed VR Goalkeeper dataframes used by the training scripts,
+but it does not redistribute raw datasets or any ForDigitStress data files.
 
-Do not commit raw datasets, preprocessed dataframes, recovered predictions,
-trained model weights, or access credentials. The VR goalkeeper dataset and
-ForDigitStress dataset have separate access conditions and citation
-requirements. ForDigitStress is an external dataset that must be requested from
-the dataset administrators and used according to its end-user license agreement
-(EULA), including scientific non-commercial use only and no redistribution of
-the dataset.
+Do not commit raw datasets, ForDigitStress dataframes, recovered predictions,
+trained model weights, or access credentials. The only dataframes intentionally
+tracked in this repository are the public VR Goalkeeper intermediates:
+`data/vr_goalkeeper/dataframes/DL_out.pkl` and
+`data/vr_goalkeeper/dataframes/features_out.pkl`. They contain 1080 rows each;
+`DL_out.pkl` has 12 columns and `features_out.pkl` has 41 columns. The VR
+goalkeeper dataset and ForDigitStress dataset have separate access conditions
+and citation requirements. ForDigitStress is an external dataset that must be
+requested from the dataset administrators and used according to its end-user
+license agreement (EULA), including scientific non-commercial use only and no
+redistribution of the dataset.
 
 If you use the VR goalkeeper dataset or code derived from this repository,
 please cite the dataset record and the accompanying paper. If you use
@@ -23,6 +28,7 @@ follow the acknowledgement requirements in its EULA.
     root `README.md`,
   - place the raw files in `data/vr_goalkeeper/raw/`,
   - preprocess them with `scripts/preprocessing/preprocess_vr_goalkeeper.py`,
+    or use the included processed dataframes directly for training/evaluation,
   - minimal example of reading one raw file:
 
     ```python
